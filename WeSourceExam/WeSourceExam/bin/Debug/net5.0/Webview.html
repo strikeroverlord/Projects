@@ -1,0 +1,116 @@
+<style>
+table { 
+	width: 750px; 
+	border-collapse: collapse; 
+	margin:50px auto;
+	}
+th { 
+	background: #3498db; 
+	color: white; 
+	font-weight: bold; 
+	}
+td, th { 
+	padding: 10px; 
+	border: 1px solid #ccc; 
+	text-align: left; 
+	font-size: 18px;
+	}
+
+.labels tr td {
+	background-color: #2cc16a;
+	font-weight: bold;
+	color: #fff;
+}
+
+.label tr td label {
+	display: block;
+}
+
+
+[data-toggle="toggle"] {
+	display: none;
+}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>  
+	<script type="text/javascript">  
+	    $(document).ready(function () {  
+	            $('tr.parent')  
+	                .css("cursor", "pointer")  
+	                .attr("title", "Click to expand/collapse")  
+	                .click(function () {  
+	                    $(this).siblings('.child-' + this.id).toggle();  
+	                });  
+	            $('tr[@class^=child-]').hide().children('td');  
+	    });  
+</script>  
+<table id="detail_table" class="detail">  
+	    <thead>  
+	    <tr>  
+	        <th colspan=2>COUNTRY GROUP</th>  
+	        <th>TOTAL AMOUNT (Euro)</th>  
+	    </tr>  
+	</thead>  
+	<tbody>  
+	   <tr class="parent" id="row1" title="Click to expand/collapse" style="cursor: pointer;color:white;background-color:green;" >  
+	        <td colspan=2>United Kingdom</td>  
+	        <td>56737172.82</td>  
+</tr>  <tr class="child-row1" style="display: none;">  
+	<td></td>
+        <td>United Kingdom</td>  
+        <td>56737172.82</td>  
+</tr>  <tr class="parent" id="row2" title="Click to expand/collapse" style="cursor: pointer;color:white;background-color:green;" >  
+	        <td colspan=2>Australia</td>  
+	        <td>58351190.75</td>  
+</tr>  <tr class="child-row2" style="display: none;">  
+	<td></td>
+        <td>Australia</td>  
+        <td>58351190.75</td>  
+</tr>  <tr class="parent" id="row3" title="Click to expand/collapse" style="cursor: pointer;color:white;background-color:green;" >  
+	        <td colspan=2>South Africa</td>  
+	        <td>60688633.56</td>  
+</tr>  <tr class="child-row3" style="display: none;">  
+	<td></td>
+        <td>South Africa</td>  
+        <td>60688633.56</td>  
+</tr>  <tr class="parent" id="row4" title="Click to expand/collapse" style="cursor: pointer;color:white;background-color:green;" >  
+	        <td colspan=2>EU</td>  
+	        <td>237089367.41</td>  
+</tr>  <tr class="child-row4" style="display: none;">  
+	<td></td>
+        <td>Austria</td>  
+        <td>57642509.23</td>  
+</tr>  <tr class="child-row4" style="display: none;">  
+	<td></td>
+        <td>Italy</td>  
+        <td>59825453.8</td>  
+</tr>  <tr class="child-row4" style="display: none;">  
+	<td></td>
+        <td>Belgium</td>  
+        <td>59310625.97</td>  
+</tr>  <tr class="child-row4" style="display: none;">  
+	<td></td>
+        <td>Latvia</td>  
+        <td>60310778.41</td>  
+</tr>  <tr class="parent" id="row5" title="Click to expand/collapse" style="cursor: pointer;color:white;background-color:green;" >  
+	        <td colspan=2>ROW</td>  
+	        <td>238604568.85</td>  
+</tr>  <tr class="child-row5" style="display: none;">  
+	<td></td>
+        <td>Chile</td>  
+        <td>59790422.02</td>  
+</tr>  <tr class="child-row5" style="display: none;">  
+	<td></td>
+        <td>Qatar</td>  
+        <td>56871250.74</td>  
+</tr>  <tr class="child-row5" style="display: none;">  
+	<td></td>
+        <td>United Arab Emirates</td>  
+        <td>61296060.55</td>  
+</tr>  <tr class="child-row5" style="display: none;">  
+	<td></td>
+        <td>United States of America</td>  
+        <td>60646835.54</td>  
+</tr>  
+	</tbody>  
+	</table>  
