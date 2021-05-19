@@ -1,0 +1,57 @@
+<style>
+table { 
+	width: 750px; 
+	border-collapse: collapse; 
+	margin:50px auto;
+	}
+th { 
+	background: #3498db; 
+	color: white; 
+	font-weight: bold; 
+	}
+td, th { 
+	padding: 10px; 
+	border: 1px solid #ccc; 
+	text-align: left; 
+	font-size: 18px;
+	}
+
+.labels tr td {
+	background-color: #2cc16a;
+	font-weight: bold;
+	color: #fff;
+}
+
+.label tr td label {
+	display: block;
+}
+
+
+[data-toggle="toggle"] {
+	display: none;
+}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>  
+	<script type="text/javascript">  
+	    $(document).ready(function () {  
+	            $('tr.parent')  
+	                .css("cursor", "pointer")  
+	                .attr("title", "Click to expand/collapse")  
+	                .click(function () {  
+	                    $(this).siblings('.child-' + this.id).toggle();  
+	                });  
+	            $('tr[@class^=child-]').hide().children('td');  
+	    });  
+</script>  
+<table id="detail_table" class="detail">  
+	    <thead>  
+	    <tr>  
+	        <th colspan=2>COUNTRY GROUP</th>  
+	        <th>TOTAL AMOUNT (Euro)</th>  
+	    </tr>  
+	</thead>  
+	<tbody>  
+	   {BODY}
+	</tbody>  
+	</table>  
