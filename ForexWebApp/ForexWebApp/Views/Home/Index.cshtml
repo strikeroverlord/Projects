@@ -1,0 +1,43 @@
+﻿@model ForexWebApp.ViewForexData
+
+
+<table id="detail_table" class="detail">
+    <thead>
+        <tr>
+            <th colspan=2>COUNTRY GROUP</th>
+            <th>TOTAL AMOUNT (Euro)</th>
+        </tr>
+    </thead>
+
+    @for (var grprow = 0; grprow < Model.SortedCountryGroup.Count(); grprow++)
+    {
+                
+
+        <tr class="parent" id="@("row" + grprow.ToString())" title="Click to expand/collapse" style="cursor: pointer;color:white;background-color:green;">
+            <td colspan=2>@Model.SortedCountryGroup[grprow].Country_Group</td>
+            <td>@String.Format("{0:n}",Model.SortedCountryGroup[grprow].Total_Amount_EUR)</td>
+        </tr>
+
+
+        for (var ctryrow = 0; ctryrow < Model.SortedCountryGroup[grprow].CountryData.Count; ctryrow++)
+        {
+
+            <tr class="@("child-row" + grprow.ToString())" style="display: none;">
+                <td></td>
+                <td>@Model.SortedCountryGroup[grprow].CountryData[ctryrow].CountryName</td>
+                <td>@String.Format("{0:n}", Model.SortedCountryGroup[grprow].CountryData[ctryrow].Total_Amount_EUR)</td>
+            </tr>
+        }
+
+    }
+
+</table>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+
+
+
+
